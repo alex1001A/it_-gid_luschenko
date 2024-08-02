@@ -151,3 +151,19 @@ ul19.innerHTML += f03
 const li = document.querySelector('.out-20 li').textContent
 
 console.log(li);
+
+const f1 = () => {
+    console.log('hi');
+}
+
+ul19.onclick = f1
+
+console.log(ul19.onclick);
+
+console.log({addEventListener});
+
+
+
+
+
+
