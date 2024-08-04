@@ -39,9 +39,10 @@ const ch4 = document.querySelector('.ch-4');
 function f04() {
     if (ch4.checked) {
         console.log('checked');
-        console.log(ch4.value)
+        console.log(+ch4.value)
     } else {
         console.log('not checked');
+        console.log(1000 - +ch4.value)
     }
     ch4.checked = false
 }
