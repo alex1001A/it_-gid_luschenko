@@ -1,10 +1,11 @@
 // Task 1
 // Создана функция t01. Функция запускается при нажатии .b-1. Напишите код внутри функции, получает ЧИСЛО из input.i-1 и если это число больше чем 1500 выводит в .out-1 единицу.
 
-let i1 = +document.querySelector(".i-1").value;
 let out1 = document.querySelector(".out-1");
 
 function t01() {
+  let i1 = +document.querySelector(".i-1").value;
+
   if (i1 > 1500) {
     out1.textContent = 1;
   }
@@ -24,7 +25,7 @@ function t02() {
   if (i2 > 1500) {
     out2.textContent = 1;
   } else {
-    out2.textContent = null;
+    out2.textContent = 0;
   }
 }
 
@@ -43,7 +44,7 @@ function t03() {
   if (i3 > 0) {
     out31.textContent = 1;
   } else {
-    out31.textContent = null;
+    out31.textContent = 0;
   }
 
   if (i3 % 2 === 0) {
@@ -77,7 +78,7 @@ function t05() {
   if (num) {
     out5.textContent = 1;
   } else {
-    out5.textContent = null;
+    out5.textContent = 0;
   }
 }
 
@@ -139,16 +140,12 @@ function t09() {
   const i9 = +document.querySelector(".i-9").value;
 
   if (i9 > 0 && i9 <= 36) {
-    console.log(1);
     out9.textContent = "подъезд 1";
   } else if (i9 > 36 && i9 <= 87) {
-    console.log(2);
     out9.textContent = "подъезд 2";
   } else if (i9 > 87 && i9 <= 110) {
-    console.log(3);
     out9.textContent = "подъезд 3";
   } else {
-    console.log(0);
     out9.textContent = 0;
   }
 }
