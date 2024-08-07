@@ -15,8 +15,10 @@ document.querySelector('.b-1').onclick = t01;
 // Task 2
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, которая присваивает input.i-2 значение value равное 'one piece'.
 
+let i2 = document.querySelector('.i-2')
+
 function t02 () {
-    document.querySelector('.i-2').value = 'one piece'
+    i2.value = 'one piece'
 }
 
 document.querySelector('.b-2').onclick = t02;
