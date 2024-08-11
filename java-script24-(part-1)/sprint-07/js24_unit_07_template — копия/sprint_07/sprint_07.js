@@ -1,31 +1,43 @@
-const goods = document.querySelector('.goods')
-const square = document.querySelector('.square')
-const layer = document.querySelector('.layer')
-const out1 = document.querySelector('.out-1')
-const out2 = document.querySelector('.out-2')
-const out3 = document.querySelector('.out-3')
-const b1 = document.querySelector('.b-1')
-const goodsImg = document.querySelector('.goods-img')
-const outs = document.querySelectorAll('.out-all')
+const goods = document.querySelector(".goods");
+const square = document.querySelector(".square");
+const layer = document.querySelector(".layer");
+const out1 = document.querySelector(".out-1");
+const out2 = document.querySelector(".out-2");
+const out3 = document.querySelector(".out-3");
+const b1 = document.querySelector(".b-1");
+const goodsImg = document.querySelector(".goods-img");
+const outs = document.querySelectorAll(".out-all");
 
 const handleChangeImg = () => {
-  goodsImg.src = `./images/${goods.value}.jpg`
+  goodsImg.src = `./images/${goods.value}.jpg`;
 
   outs.forEach((out) => {
-    out.textContent = ''
-  })
+    out.textContent = "";
+  });
 
-  square.value = 1
-  layer.value = 1
-}
+  square.value = 1;
+  layer.value = 1;
+};
 
 const calculateExpenditure = () => {
+  let expediture = 0;
+  let k = 0;
+  let price = 0;
 
-  let expediture = 0
-  let k = 0
-  let price = 0
+  const value = goods.value;
 
-  const value = goods.value
+  if (square.value < 1) square.value = 1;
+  if (square.value > 10000) square.value = 1;
+  if (layer.value < 1) layer.value = 1;
+  if (layer.value > 100) layer.value = 100;
+
+  if (square.value.trim() === "") {
+    square.value = 1;
+  }
+
+  if (layer.value.trim() === "") {
+    layer.value = 1;
+  }
 
   switch (value) {
     case "budmaster":
@@ -50,10 +62,15 @@ const calculateExpenditure = () => {
       break;
   }
 
-  expediture = square.value * layer.value * k
-  out1.textContent = expediture + 'кг'
-}
+  expediture = square.value * layer.value * k;
 
-b1.onclick = calculateExpenditure
+  const bagsNumber = Math.ceil(expediture / 25);
 
-goods.onchange = handleChangeImg
+  out1.textContent = expediture + "кг";
+  out2.textContent = bagsNumber + " мешок(ов)";
+  out3.textContent = bagsNumber * price + " uah";
+};
+
+b1.onclick = calculateExpenditure;
+
+goods.onchange = handleChangeImg;
