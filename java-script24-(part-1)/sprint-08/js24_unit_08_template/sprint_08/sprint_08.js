@@ -18,20 +18,18 @@ document.querySelector(".b-1").onclick = t01;
 // Task 2
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, который создает с помощью цикла строку, где шаблон _* повторяется число раз указанное в .i-2. Функция выводит в .out-2 созданную строку.
 
-const out2 = document.querySelector('.out-2')
-const i2 = +document.querySelector('.i-2').value
+const out2 = document.querySelector(".out-2");
+const i2 = +document.querySelector(".i-2").value;
 
-let srt2 = ''
+let srt2 = "";
 
 function t02() {
+  for (let i = 0; i < i2; i++) {
+    srt2 += "_*";
+  }
 
-    for (let i = 0; i < i2; i++) {
-        srt2 += '_*'
-    }
-
-    out2.textContent = srt2
+  out2.textContent = srt2;
 }
-
 
 document.querySelector(".b-2").onclick = t02;
 
@@ -39,17 +37,16 @@ document.querySelector(".b-2").onclick = t02;
 // Создана функция t03. Функция запускается при нажатии .b-3. Напишите код внутри функции, который получает число из input и с помощью цикла создает строку от 0 до указанного числа с разделителем - подчеркивание. Выводит созданную строку в .out-3.
 // Введено число 5, получаем строку 0_1_2_3_4_5_
 
-const out3 = document.querySelector('.out-3')
-const i3 = +document.querySelector('.i-3').value
-
+const out3 = document.querySelector(".out-3");
+const i3 = +document.querySelector(".i-3").value;
 
 function t03() {
-    let str3 = ''
-    for (let i = 0; i <= i3; i++) {
-        str3 += `${i}_`
-    }
+  let str3 = "";
+  for (let i = 0; i <= i3; i++) {
+    str3 += `${i}_`;
+  }
 
-    out3.textContent = str3
+  out3.textContent = str3;
 }
 
 document.querySelector(".b-3").onclick = t03;
@@ -58,18 +55,18 @@ document.querySelector(".b-3").onclick = t03;
 // Создана функция t04. Функция запускается при нажатии .b-4. Напишите код внутри функции, который получает число из input и с помощью цикла создает строку от полученного числа до нуля, с разделителем - подчеркивание. Выводит созданную строку в .out-4.
 // Введено число 5, получаем строку 5_4_3_2_1_0_
 
-const out4 = document.querySelector('.out-4')
+const out4 = document.querySelector(".out-4");
 
 function t04() {
-    const i4 = +document.querySelector('.i-4').value
+  const i4 = +document.querySelector(".i-4").value;
 
-    let str4 = ''
+  let str4 = "";
 
-    for (let i = i4; i >= 0; i--) {
-        str4 += `${i}_`
-    }
+  for (let i = i4; i >= 0; i--) {
+    str4 += `${i}_`;
+  }
 
-    out4.textContent = str4
+  out4.textContent = str4;
 }
 
 document.querySelector(".b-4").onclick = t04;
@@ -81,7 +78,19 @@ document.querySelector(".b-4").onclick = t04;
 // При проверке в input будут вводиться только четные числа.
 // Строка выводится в .out-5.
 
-function t05() {}
+const out5 = document.querySelector(".out-5");
+
+function t05() {
+  const i5 = +document.querySelector(".i-5").value;
+
+  let str = "";
+
+  for (let i = 0; i <= i5; i = i + 2) {
+    str += `${i}_`;
+  }
+
+  out5.textContent = str;
+}
 
 document.querySelector(".b-5").onclick = t05;
 
@@ -90,9 +99,25 @@ document.querySelector(".b-5").onclick = t05;
 // Например введено число 7 получим строку 0_3_6_9_
 // Например введено число 12 получим 0_3_6_9_12_
 // Например введено число 13 получим 0_3_6_9_12_15
-// Функция выводит строку в .out-6.
+// Функция выводит строку в .out-6.6
 
-function t06() {}
+const out6 = document.querySelector(".out-6");
+
+function t06() {
+  const i6 = +document.querySelector(".i-6").value;
+
+  let str = "";
+
+  let i = 0;
+
+  for (; i < i6; i += 3) {
+    str += `${i}_`;
+  }
+
+  str += `${i}_`;
+
+  out6.textContent = str;
+}
 
 document.querySelector(".b-6").onclick = t06;
 
@@ -100,7 +125,18 @@ document.querySelector(".b-6").onclick = t06;
 // Создана функция t07. Функция запускается при нажатии .b-7. Функция создает строку от 1 до 30 с шагом 1 и разделителем подчеркивание. В строке должны быть пропущены числа, которые делятся на 4 с остатком 0. Для пропуска примените continue. Выведите строку в .out-7.
 // Ожидается строка вида 1_2_3_5_6_7_9_10_11_13_14_15_17_18_19_21_22_23_25_26_27_29_30_
 
-function t07() {}
+const out7 = document.querySelector(".out-7");
+
+function t07() {
+  let str = "";
+
+  for (let i = 1; i <= 30; i++) {
+    if (i % 4 === 0) continue;
+    str += `${i}_`;
+  }
+
+  out7.textContent = str;
+}
 
 document.querySelector(".b-7").onclick = t07;
 
@@ -108,21 +144,56 @@ document.querySelector(".b-7").onclick = t07;
 // Создана функция t08. Функция запускается при нажатии .b-8. Функция считает сумму чисел от 0 до 10 с помощью цикла. Выводит сумму в .out-8.
 // Т.е. нужно найти сумму 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
 
-function t08() {}
+const out8 = document.querySelector(".out-8");
+
+function t08() {
+  let sum = 0;
+
+  for (let i = 0; i <= 10; i++) {
+    sum += i;
+  }
+
+  out8.textContent = sum;
+}
 
 document.querySelector(".b-8").onclick = t08;
 
 // Task 9
 // Создана функция t09. Функция запускается при нажатии .b-9. Напишите код внутри функции, который считает сумму чисел от 0 до введенного в input.i-9 числа включительно. Выводит сумму в .out-9.
 
-function t09() {}
+const out9 = document.querySelector(".out-9");
+
+function t09() {
+  const i9 = +document.querySelector(".i-9").value;
+
+  let sum = 0;
+
+  for (let i = 0; i <= i9; i++) {
+    sum += i;
+  }
+
+  out9.textContent = sum;
+}
 
 document.querySelector(".b-9").onclick = t09;
 
 // Task 10
 // Создана функция t10. Функция запускается при нажатии .b-10. Напишите код внутри функции, который считает сумму чисел от 0 до введенного в input.i-10 числа включительно. Выводит сумму в .out-10. Если сумма становится больше 50, то цикл останавливается и выводится текущая сумма.
 
-function t10() {}
+const out10 = document.querySelector(".out-10");
+
+function t10() {
+  const i10 = +document.querySelector(".i-10").value;
+
+  let sum = 0;
+
+  for (let i = 0; i <= i10; i++) {
+    if (sum > 50) break;
+    sum += i;
+  }
+
+  out10.textContent = sum;
+}
 
 document.querySelector(".b-10").onclick = t10;
 
@@ -131,14 +202,42 @@ document.querySelector(".b-10").onclick = t10;
 // Например введено 4 и 7 получаем строку 4_5_6_7_
 // Например введено 12 и 9 и получаем строку 9_10_11_12_
 
-function t11() {}
+const out11 = document.querySelector(".out-11");
+
+function t11() {
+  const i111 = +document.querySelector(".i-111").value;
+  const i112 = +document.querySelector(".i-112").value;
+
+  let str = "";
+
+  const start = i111 > i112 ? i112 : i111;
+  const end = i111 > i112 ? i111 : i112;
+
+  for (let i = start; i <= end; i++) {
+    str += `${i}_`;
+  }
+
+  out11.textContent = str;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
 // Task 12
 // Создана функция t12. Функция запускается при нажатии .b-12. Напишите код внутри функции, который считает произведение чисел от 1 до введенного в input.i-12. Результат выводится в .out-12.
 
-function t12() {}
+const out12 = document.querySelector(".out-12");
+
+function t12() {
+  const i12 = +document.querySelector(".i-12").value;
+
+  let multiply = 1;
+
+  for (let i = 1; i <= i12; i++) {
+    multiply *= i;
+  }
+
+  out12.textContent = multiply;
+}
 
 document.querySelector(".b-12").onclick = t12;
 
@@ -159,14 +258,27 @@ document.querySelector(".b-13").onclick = t13;
 // Task 14
 // Создана функция t14. Функция запускается при нажатии .b-14. Напишите код внутри функции, который получает все параграфы .p-14 в NodeList и каждому прописывает фон backgroundColor равный 'lightsalmon'.
 
-function t14() {}
+const p14 = document.querySelectorAll(".p-14");
+
+function t14() {
+  for (let i = 0; i < p14.length; i++) {
+    p14[i].style.background = "lightsalmon";
+  }
+}
 
 document.querySelector(".b-14").onclick = t14;
 
 // Тask 15
 // Создана функция t15. Функция запускается при нажатии .b-15. Напишите код внутри функции, который получает все div.d-15 в NodeList и четным элементам NodeList присваивает свойство background равное 'paleturquoise'.
 
-function t15() {}
+const d15 = document.querySelectorAll(".d-15");
+
+function t15() {
+  for (let i = 0; i < d15.length; i++) {
+    if (i % 2 !== 0) continue;
+    d15[i].style.background = "paleturquoise";
+  }
+}
 
 document.querySelector(".b-15").onclick = t15;
 
@@ -175,8 +287,17 @@ document.querySelector(".b-15").onclick = t15;
 // Создана функция t16. Функция запускается при нажатии .b-16. Функция должна перебрать HTML коллекцию spans16 и найти сумму чисел прописанных в данных span. Вывести сумму в .out-16.
 
 const spans16 = document.getElementsByClassName("sp-16");
+const out16 = document.querySelector(".out-16");
 
-function t16() {}
+function t16() {
+  let sum = 0;
+
+  for (let i = 0; i < spans16.length; i++) {
+    sum += +spans16[i].textContent;
+  }
+
+  out16.textContent = sum;
+}
 
 document.querySelector(".b-16").onclick = t16;
 
@@ -199,7 +320,17 @@ document.querySelector(".b-17").onclick = t17;
 // Task 18
 // Напишите в функции t18 код, который выводит в .out-18 значение value выбранного radiobutton r-18.
 
-function t18() {}
+const radios18 = document.getElementsByName("r-18");
+const out18 = document.querySelector(".out-18");
+
+function t18() {
+  for (let i = 0; i < radios18.length; i++) {
+    if (radios18[i].checked) {
+      out18.textContent = radios18[i].value;
+      break;
+    }
+  }
+}
 
 document.querySelector(".b-18").onclick = t18;
 
@@ -218,6 +349,20 @@ document.querySelector(".b-19").onclick = t19;
 // value равен 200, то в .out-20 вывести строку 'moderator'
 // value равен 300, то в .out-20 вывести строку 'user'
 
-function t20() {}
+const out20 = document.querySelector('.out-20')
+
+function t20() {
+  const value20 = +document.querySelector('[name="r-20"]:checked').value
+  
+  console.log(value20);
+  
+  if (value20 === 100) {
+    out20.textContent = 'admin'
+  } else if (value20 === 200) {
+    out20.textContent = 'moderator'
+  } else if (value20 === 300) {
+    out20.textContent = 'user'
+  }
+}
 
 document.querySelector(".b-20").onclick = t20;
