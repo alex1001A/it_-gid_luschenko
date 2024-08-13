@@ -353,9 +353,7 @@ const out20 = document.querySelector('.out-20')
 
 function t20() {
   const value20 = +document.querySelector('[name="r-20"]:checked').value
-  
-  console.log(value20);
-  
+    
   if (value20 === 100) {
     out20.textContent = 'admin'
   } else if (value20 === 200) {
