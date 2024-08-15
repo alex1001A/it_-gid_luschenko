@@ -94,10 +94,10 @@ function t05() {
   let value5 = 0;
   let str5 = "";
 
-  while (value5 <= i5) {    
+  while (value5 <= i5) {
     if (value5 % 2 !== 0) continue;
     str5 += `${value5}_`;
-      value5 += 2;
+    value5 += 2;
   }
 
   out5.textContent = str5;
@@ -108,20 +108,20 @@ document.querySelector(".b-5").onclick = t05;
 // Task 6
 // Создана функция t06. Функция запускается при нажатии .b-6. Напишите код внутри функции. Код должен выводить в .out-6 количество чисел, которые делятся на 7 с остатком нуль, в диапазоне от 0 (включительно) до 100 (включительно). Решите задачу циклом while.
 
-const out6 = document.querySelector('.out-6')
+const out6 = document.querySelector(".out-6");
 
 function t06() {
-    let count6 = 0
-    let value6 = 0
+  let count6 = 0;
+  let value6 = 0;
 
-    while (value6 <= 100) {
-        if (value6 % 7 === 0) {
-            count6++
-        };
-        value6++
+  while (value6 <= 100) {
+    if (value6 % 7 === 0) {
+      count6++;
     }
+    value6++;
+  }
 
-    out6.textContent = count6
+  out6.textContent = count6;
 }
 
 document.querySelector(".b-6").onclick = t06;
@@ -130,7 +130,23 @@ document.querySelector(".b-6").onclick = t06;
 // Создана функция t07. Функция запускается при нажатии .b-7. Напишите код внутри функции. Код содержит цикл while от 10 (включительно) до 99 (включительно) и создает строку, куда выводит числа в которых сумма цифр десятков и единиц равна 8. Разделитель подчеркивание.
 // т.е. выводятся 17_26_ и далее
 
-function t07() {}
+const out7 = document.querySelector(".out-7");
+
+function t07() {
+  let str7 = "";
+  let i = 10
+
+  while (i <= 99) {
+    let ten = Math.floor(i / 10)
+    let unit = i % 10
+     if (ten + unit === 8) {
+       str7 += `${i}_`
+     }
+    i++
+  }
+
+  out7.textContent = str7
+}
 
 document.querySelector(".b-7").onclick = t07;
 
@@ -138,7 +154,19 @@ document.querySelector(".b-7").onclick = t07;
 // Создана функция t08. Функция запускается при нажатии .b-8. Функция получает число из input.i-8 и создает строку вида 0_**_1_**_ до введенного числа включительно. Строку выводит в .out-8.
 // Например ввели 3, получаем строку 0_**_1_**_2_**_3_**_
 
-function t08() {}
+const out8 = document.querySelector('.out-8')
+
+function t08() {
+  let i8 = +document.querySelector('.i-8').value
+  let str8 = ''
+  let i = 0
+  while (i <= i8) {
+    str8 += `${i}_**_`
+    i++
+  }
+
+  out8.textContent = str8
+}
 
 document.querySelector(".b-8").onclick = t08;
 
@@ -146,7 +174,20 @@ document.querySelector(".b-8").onclick = t08;
 // Создана функция t09. Функция запускается при нажатии .b-9. Напишите код внутри функции. Код получает число из input.i-9 и формирует строку, которая при выводе на страницу рисует прямоугольник. Ширина прямоугольника - 6 звездочек, а высота определяется введенным числом. Выведите строку в .out-9.
 // Например ввели число 3. Необходимо сформировать строку '******<br>******<br>******<br>'
 
-function t09() {}
+const out9 = document.querySelector('.out-9')
+
+function t09() {
+  let i9 = +document.querySelector('.i-9').value
+  let str9 = ''
+  let i = 0
+
+  while (i < i9) {
+    str9 += `******<br>`
+    i++
+  }
+
+  out9.innerHTML = str9
+}
 
 document.querySelector(".b-9").onclick = t09;
 
@@ -154,7 +195,12 @@ document.querySelector(".b-9").onclick = t09;
 // Создана функция t10. Функция запускается при нажатии .b-10. Напишите код внутри функции. Код получает число из input.i-10 и создает строку от 0 до введенного числа включительно, где разделитель после четных чисел знак =, а после не четных знак минус. Строка выводится в .out-10. Применяйте цикл while.
 // Например введено число 5, необходимо сформировать строку '0=1-2=3-4=5-'
 
-function t10() {}
+const out10 = document.querySelector('.out-10')
+
+function t10() {
+  const i10 = +document.querySelector('.out-10').value
+
+}
 
 document.querySelector(".b-10").onclick = t10;
 
