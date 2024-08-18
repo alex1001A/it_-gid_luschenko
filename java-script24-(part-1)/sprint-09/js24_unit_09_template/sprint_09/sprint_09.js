@@ -4,10 +4,9 @@
 
 const out1 = document.querySelector(".out-1");
 
-let i1 = 0;
-let str1 = "";
-
 function t01() {
+  let i1 = 0;
+  let str1 = "";
   while (i1 < 10) {
     str1 += "_*";
     i1++;

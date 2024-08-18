@@ -3,9 +3,9 @@
 
 const out1 = document.querySelector(".out-1");
 
-let str1 = "";
 
 function t01() {
+  let str1 = "";
   for (let i = 0; i < 10; i++) {
     str1 += "_*";
   }
@@ -21,9 +21,9 @@ document.querySelector(".b-1").onclick = t01;
 const out2 = document.querySelector(".out-2");
 const i2 = +document.querySelector(".i-2").value;
 
-let srt2 = "";
 
 function t02() {
+  let srt2 = "";
   for (let i = 0; i < i2; i++) {
     srt2 += "_*";
   }
@@ -38,9 +38,9 @@ document.querySelector(".b-2").onclick = t02;
 // Введено число 5, получаем строку 0_1_2_3_4_5_
 
 const out3 = document.querySelector(".out-3");
-const i3 = +document.querySelector(".i-3").value;
 
 function t03() {
+  const i3 = +document.querySelector(".i-3").value;
   let str3 = "";
   for (let i = 0; i <= i3; i++) {
     str3 += `${i}_`;
