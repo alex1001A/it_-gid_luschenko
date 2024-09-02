@@ -167,11 +167,11 @@ document.querySelector(".b-10").onclick = () => t10(".p-10");
 // тут напишите функцию t11
 
 const t11 = (cl) => {
-  const i11 = +document.querySelector(`.${cl}`).value;
-  return i11 > 0 ? true : false;
+  const i11 = document.querySelector(cl).value;
+  return (i11 <= 0) ? false : true;
 };
 
-document.querySelector(".b-11").onclick = () => (document.querySelector(".out-11").textContent = t11("i-11"));
+document.querySelector(".b-11").onclick = () => (document.querySelector(".out-11").textContent = t11(".i-11"));
 
 // Task 12
 // Напишите стрелочную функцию t12, которая получает как аргумент температуру воды и если температура:
