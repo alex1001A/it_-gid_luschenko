@@ -206,41 +206,77 @@ i14.addEventListener('paste', () => {
 // Task 15
 // Добавьте событие cut на input.i-15. При срабатывании события запускается функция t15, которая добавляет .i-15 атрибут placeholder с текстом 'cut'
 
-const t15 = () => {};
+const i15 = document.querySelector('.i-15')
+
+const t15 = () => {
+  i15.setAttribute('placeholder', 'cut')
+};
+
+i15.addEventListener('cut', t15)
 
 // тут напишите событие
 
 // Task 16
 // Добавьте событие focus на input.i-16. При срабатывании события запускается функция t16, которая добавляет .i-16 класс  'focus-input'.
 
-const t16 = () => {};
+const i16 = document.querySelector('.i-16')
+
+const t16 = () => {
+  i16.classList.add('focus-input')
+};
+
+i16.addEventListener('focus', t16)
 
 // тут напишите событие
 
 // Task 17
 // Добавьте событие blur на input.i-16. При срабатывании события запускается функция t17, которая удаляет .i-16 класс  'focus-input'.
 
-const t17 = () => {};
+const t17 = () => {
+  i16.classList.remove('focus-input')
+};
+
+i16.addEventListener('blur', t17)
 
 // тут напишите событие
 
 // Task 18
 // Добавьте событие click на кнопку .b-18. По клику запускается стрелочная функция t18, которая ищет элемент с tabindex = 18 и делает элемент focus().
 
-const t18 = () => {};
+const b18 = document.querySelector('.b-18')
+
+const t18 = () => {
+  document.querySelector('[tabindex="18"]').focus()
+};
+
+b18.addEventListener('click', t18)
 
 // тут напишите событие
 
 // Task 19
 // Добавьте событие canсel на input .i-19. По клику запускается стрелочная функция t19, которая выводит в .out-19 текст 'Cancel'.
 
-const t19 = () => {};
+const i19 = document.querySelector('.i-19')
+const out19 = document.querySelector('.out-19')
+
+const t19 = () => {
+  out19.textContent = 'Cancel'
+};
+
+i19.addEventListener('cancel', t19)
 
 // тут напишите событие
 
 // Task 20
 // Добавьте событие dragstart на .block-20. По событию запускается стрелочная функция t20. Функция выводит в .out-20 строку 'drag'.
 
-const t20 = () => {};
+const block20 = document.querySelector('.block-20')
+const out20 = document.querySelector('.out-20')
+
+const t20 = () => {
+  out20.textContent = 'drag'
+};
+
+block20.addEventListener('dragstart', t20)
 
 // тут напишите событие
