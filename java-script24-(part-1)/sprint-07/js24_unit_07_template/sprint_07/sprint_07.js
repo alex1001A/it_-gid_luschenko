@@ -15,7 +15,7 @@ function t01() {
   const value = goods.value;
 
   if (square.value < 1) square.value = 1
-  if (square.value > 10000) square.value = 1
+  if (square.value > 10000) square.value = 10000
   if (layer.value < 1) layer.value = 1
   if (layer.value > 100) layer.value = 100
 
